@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  font-family: "Ubuntu Mono", monospace;
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background: $color-2;
+    color: $text-color-2;
+    -webkit-text-fill-color: $text-color-2;
+  }
+}
+
+html {
+  background: $main-color;
+  color: $text-color;
+  font-size: 12px;
+  height: 100vh;
+  width: 100vw;
+
+  @include min-tablet {
+    font-size: 14px;
+  }
+
+  @include min-desktop {
+    font-size: 16px;
+  }
+
+  body {
+    background: unset;
+    display: grid;
+    place-items: center;
+    padding: 1rem 2rem;
+    height: 100%;
+    width: 100%;
+  }
+}

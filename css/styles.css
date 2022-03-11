@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: "Ubuntu Mono", monospace;
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  background: #00dbde;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+}
+
+html {
+  background: #e0dfdf;
+  color: #2d3436;
+  font-size: 12px;
+  height: 100vh;
+  width: 100vw;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+html body {
+  background: unset;
+  display: grid;
+  place-items: center;
+  padding: 1rem 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+}
+main h1 {
+  color: #2d3436;
+  margin-bottom: 1.5rem;
+}
+main .content {
+  background: unset;
+  border: unset;
+  height: auto;
+  width: auto;
+  min-width: 16rem;
+}
+main .content .display,
+main .content .display::before {
+  background: linear-gradient(230deg, #fc00ff 48.13%, #00dbde);
+}
+main .content .display {
+  position: relative;
+  background-size: 250%;
+  background-position: left;
+  border: unset;
+  border-radius: 14px 14px 0 0;
+  height: 12rem;
+  width: auto;
+}
+main .content .display::before {
+  content: "";
+  border-radius: 18px;
+  filter: blur(25px);
+  transform: translateY(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+main .content .buttons-container {
+  display: flex;
+  background: #e0dfdf;
+  border-radius: 14px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  margin-top: -1rem;
+  position: relative;
+  z-index: 10;
+}
+main .content .buttons-container .grid-buttons, main .content .buttons-container .buttons-container__left__box-3, main .content .buttons-container .buttons-container__left__box-2, main .content .buttons-container .buttons-container__left__box-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 5rem);
+  gap: 0;
+}
+main .content .buttons-container button {
+  aspect-ratio: 1/1;
+  background: unset;
+  border: none;
+  cursor: pointer;
+}
+main .content .buttons-container__right {
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=styles.css.map */
