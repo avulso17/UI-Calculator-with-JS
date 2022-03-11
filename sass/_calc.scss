@@ -47,27 +47,50 @@ main {
       display: flex;
       background: $main-color;
       border-radius: $radius;
-      box-shadow: 0 15px 25px rgba($color: #000000, $alpha: 0.15);
-      margin-top: -1rem;
+      box-shadow: 0 15px 35px rgba($color: #000000, $alpha: 0.125);
+      margin-top: -0.5rem;
       position: relative;
       z-index: 10;
 
       .grid-buttons {
         display: grid;
-        grid-template-columns: repeat(3, 5rem);
+        grid-template-columns: repeat(3, auto);
         gap: 0;
       }
 
       button {
-        aspect-ratio: 1/1;
-        background: unset;
+        background: $main-color;
         border: none;
         cursor: pointer;
+        color: $text-color;
+        font-size: 2rem;
+        height: 6rem;
+        width: 6rem;
+        transition: $transition;
+        user-select: none;
+
+        &:hover {
+          transform: scale(1.05);
+          filter: drop-shadow(0 0 15px rgba($color: black, $alpha: 0.125));
+        }
       }
 
       &__left {
         &__box-1 {
           @extend .grid-buttons;
+
+          button {
+            background: $second-color;
+          }
+
+          button:first-child div {
+            background: $gradient;
+            background-size: 350%;
+            background-position: 0 35%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
         }
 
         &__box-2 {
@@ -76,12 +99,60 @@ main {
 
         &__box-3 {
           @extend .grid-buttons;
+
+          button:first-child {
+            border-radius: 0 0 0 $radius;
+            padding-left: 2.7rem;
+            text-align: left;
+            width: 12rem;
+          }
+
+          button:last-child {
+            background: $second-color;
+          }
         }
       }
 
       &__right {
         display: flex;
         flex-direction: column;
+
+        button {
+          background: $second-color;
+        }
+
+        button:last-child {
+          background: $gradient;
+          background-size: 350%;
+          background-position: 0 30%;
+          border-radius: 0 0 $radius 0;
+          color: $main-color;
+          position: relative;
+
+          //   &::before {
+          //     content: "";
+          //     background: $gradient;
+          //     border-radius: 0 0 $radius 0;
+          //     filter: blur(25px);
+          //     position: absolute;
+          //     top: 0;
+          //     left: 0;
+          //     height: 100%;
+          //     width: 100%;
+          //     z-index: -1;
+          //     transition: $transition;
+          //     transform: scale(0);
+          //   }
+
+          //   &:hover {
+          //     filter: none;
+          //   }
+
+          //   &:hover::before {
+          //     z-index: -1;
+          //     transform: scale(1);
+          //   }
+        }
       }
     }
   }
