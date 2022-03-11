@@ -61,7 +61,7 @@ main .content .display {
   background-size: 250%;
   background-position: left;
   border: unset;
-  border-radius: 14px 14px 0 0;
+  border-radius: 12px 12px 0 0;
   height: 12rem;
   width: auto;
 }
@@ -80,7 +80,7 @@ main .content .display::before {
 main .content .buttons-container {
   display: flex;
   background: #e0dfdf;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.125);
   margin-top: -0.5rem;
   position: relative;
@@ -118,7 +118,7 @@ main .content .buttons-container__left__box-1 button:first-child div {
   color: transparent;
 }
 main .content .buttons-container__left__box-3 button:first-child {
-  border-radius: 0 0 0 14px;
+  border-radius: 0 0 0 12px;
   padding-left: 2.7rem;
   text-align: left;
   width: 12rem;
@@ -137,7 +137,7 @@ main .content .buttons-container__right button:last-child {
   background: linear-gradient(230deg, #fc00ff 48.13%, #00dbde);
   background-size: 350%;
   background-position: 0 30%;
-  border-radius: 0 0 14px 0;
+  border-radius: 0 0 12px 0;
   color: #e0dfdf;
   position: relative;
 }

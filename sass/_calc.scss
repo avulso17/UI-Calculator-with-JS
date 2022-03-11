@@ -128,30 +128,6 @@ main {
           border-radius: 0 0 $radius 0;
           color: $main-color;
           position: relative;
-
-          //   &::before {
-          //     content: "";
-          //     background: $gradient;
-          //     border-radius: 0 0 $radius 0;
-          //     filter: blur(25px);
-          //     position: absolute;
-          //     top: 0;
-          //     left: 0;
-          //     height: 100%;
-          //     width: 100%;
-          //     z-index: -1;
-          //     transition: $transition;
-          //     transform: scale(0);
-          //   }
-
-          //   &:hover {
-          //     filter: none;
-          //   }
-
-          //   &:hover::before {
-          //     z-index: -1;
-          //     transform: scale(1);
-          //   }
         }
       }
     }
