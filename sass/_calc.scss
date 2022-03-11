@@ -15,6 +15,10 @@ main {
     width: auto;
     min-width: 16rem;
 
+    // ---------------------- //
+    // display da calculadora //
+    // ---------------------- //
+
     .display,
     .display::before {
       background: $gradient;
@@ -26,6 +30,11 @@ main {
       background-position: left;
       border: unset;
       border-radius: $radius $radius 0 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: right;
+      padding: 2rem;
       height: 12rem;
       width: auto;
 
@@ -41,7 +50,26 @@ main {
         width: 100%;
         z-index: -1;
       }
+
+      h1,
+      p {
+        color: $text-color-2;
+      }
+
+      h1 {
+        font-size: 3.75rem;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 1.25rem;
+        opacity: 0.85;
+      }
     }
+
+    // --------------------- //
+    // container dos botoes  //
+    // --------------------- //
 
     .buttons-container {
       display: flex;
@@ -64,6 +92,7 @@ main {
         cursor: pointer;
         color: $text-color;
         font-size: 2rem;
+        font-weight: 400;
         height: 6rem;
         width: 6rem;
         transition: $transition;
@@ -72,6 +101,11 @@ main {
         &:hover {
           transform: scale(1.05);
           filter: drop-shadow(0 0 15px rgba($color: black, $alpha: 0.125));
+        }
+
+        &:active {
+          transform: scale(1);
+          filter: drop-shadow(0 0 10px rgba($color: black, $alpha: 0.125));
         }
       }
 
@@ -126,7 +160,7 @@ main {
           background-size: 350%;
           background-position: 0 30%;
           border-radius: 0 0 $radius 0;
-          color: $main-color;
+          color: $text-color-2;
           position: relative;
         }
       }
