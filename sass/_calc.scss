@@ -1,169 +1,227 @@
 main {
-  display: inline-flex;
-  flex-direction: column;
-  text-align: left;
+  display: grid;
+  place-items: center;
+  height: 85vh;
+  width: 100vw;
 
-  h1 {
-    color: $text-color;
-    margin-bottom: 1.5rem;
-  }
+  .main {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: left;
 
-  .content {
-    background: unset;
-    border: unset;
-    height: auto;
-    width: auto;
-    min-width: 16rem;
-
-    // ---------------------- //
-    // display da calculadora //
-    // ---------------------- //
-
-    .display,
-    .display::before {
-      background: $gradient;
+    h1 {
+      color: $text-color;
+      margin-bottom: 1.5rem;
     }
 
-    .display {
-      position: relative;
-      background-size: 250%;
-      background-position: left;
+    .content {
+      background: unset;
       border: unset;
-      border-radius: $radius $radius 0 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      text-align: right;
-      padding: 2rem;
-      height: 12rem;
+      height: auto;
       width: auto;
+      min-width: 16rem;
 
-      &::before {
-        content: "";
-        border-radius: 18px;
-        filter: blur(25px);
-        transform: translateY(5px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
+      // ---------------------- //
+      // display da calculadora //
+      // ---------------------- //
+
+      .display,
+      .display::before {
+        background: $gradient;
       }
 
-      h1,
-      p {
-        color: $text-color-2;
+      .display {
+        position: relative;
+        background-size: 250%;
+        background-position: left;
+        border: unset;
+        border-radius: $radius $radius 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: right;
+        padding: 2rem;
+        height: 12rem;
+        width: auto;
+
+        &::before {
+          content: "";
+          border-radius: 18px;
+          filter: blur(25px);
+          transform: translateY(5px);
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+        }
+
+        h1,
+        p {
+          color: $text-color-2;
+        }
+
+        h1 {
+          font-size: 3.75rem;
+          font-weight: normal;
+        }
+
+        p {
+          font-size: 1.25rem;
+          opacity: 0.85;
+        }
       }
 
-      h1 {
-        font-size: 3.75rem;
-        font-weight: normal;
-      }
+      // --------------------- //
+      // container dos botoes  //
+      // --------------------- //
 
-      p {
-        font-size: 1.25rem;
-        opacity: 0.85;
-      }
-    }
-
-    // --------------------- //
-    // container dos botoes  //
-    // --------------------- //
-
-    .buttons-container {
-      display: flex;
-      background: $main-color;
-      border-radius: $radius;
-      box-shadow: 0 15px 35px rgba($color: #000000, $alpha: 0.125);
-      margin-top: -0.5rem;
-      position: relative;
-      z-index: 10;
-
-      .grid-buttons {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        gap: 0;
-      }
-
-      button {
+      .buttons-container {
+        display: flex;
         background: $main-color;
-        border: none;
-        cursor: pointer;
-        color: $text-color;
-        font-size: 2rem;
-        font-weight: 400;
-        height: 6rem;
-        width: 6rem;
-        transition: $transition;
-        user-select: none;
+        border-radius: $radius;
+        box-shadow: 0 15px 35px rgba($color: #000000, $alpha: 0.125);
+        margin-top: -0.5rem;
+        position: relative;
+        z-index: 10;
 
-        &:hover {
-          transform: scale(1.05);
-          filter: drop-shadow(0 0 15px rgba($color: black, $alpha: 0.125));
+        .grid-buttons {
+          display: grid;
+          grid-template-columns: repeat(3, auto);
+          gap: 0;
         }
 
-        &:active {
-          transform: scale(1);
-          filter: drop-shadow(0 0 10px rgba($color: black, $alpha: 0.125));
-        }
-      }
+        button {
+          background: $main-color;
+          border: none;
+          cursor: pointer;
+          color: $text-color;
+          font-size: 2rem;
+          font-weight: 400;
+          height: 6rem;
+          width: 6rem;
+          transition: $transition;
+          user-select: none;
 
-      &__left {
-        &__box-1 {
-          @extend .grid-buttons;
+          &:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba($color: black, $alpha: 0.125));
+          }
+
+          &:active {
+            transform: scale(1);
+            filter: drop-shadow(0 0 10px rgba($color: black, $alpha: 0.125));
+          }
+        }
+
+        &__left {
+          &__box-1 {
+            @extend .grid-buttons;
+
+            button {
+              background: $second-color;
+            }
+
+            button:first-child div {
+              background: $gradient;
+              background-size: 350%;
+              background-position: 0 35%;
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+            }
+          }
+
+          &__box-2 {
+            @extend .grid-buttons;
+          }
+
+          &__box-3 {
+            @extend .grid-buttons;
+
+            button:first-child {
+              border-radius: 0 0 0 $radius;
+              padding-left: 2.7rem;
+              text-align: left;
+              width: 12rem;
+            }
+
+            button:last-child {
+              background: $second-color;
+            }
+          }
+        }
+
+        &__right {
+          display: flex;
+          flex-direction: column;
 
           button {
             background: $second-color;
           }
 
-          button:first-child div {
+          button:last-child {
             background: $gradient;
             background-size: 350%;
-            background-position: 0 35%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            background-position: 0 30%;
+            border-radius: 0 0 $radius 0;
+            color: $text-color-2;
+            position: relative;
           }
-        }
-
-        &__box-2 {
-          @extend .grid-buttons;
-        }
-
-        &__box-3 {
-          @extend .grid-buttons;
-
-          button:first-child {
-            border-radius: 0 0 0 $radius;
-            padding-left: 2.7rem;
-            text-align: left;
-            width: 12rem;
-          }
-
-          button:last-child {
-            background: $second-color;
-          }
-        }
-      }
-
-      &__right {
-        display: flex;
-        flex-direction: column;
-
-        button {
-          background: $second-color;
-        }
-
-        button:last-child {
-          background: $gradient;
-          background-size: 350%;
-          background-position: 0 30%;
-          border-radius: 0 0 $radius 0;
-          color: $text-color-2;
-          position: relative;
         }
       }
     }
+  }
+}
+
+.false-floor {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+
+  &__button {
+    aspect-ratio: 1/1;
+    background: $main-color;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.125);
+    cursor: pointer;
+    position: relative;
+    width: 4rem;
+    transition: $transition;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $text-color;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.225);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -15%;
+      left: -15%;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.125);
+      width: 130%;
+      z-index: -1;
+    }
+  }
+}
+
+.social-footer {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem 0;
+
+  h1 {
+    text-transform: capitalize;
   }
 }
