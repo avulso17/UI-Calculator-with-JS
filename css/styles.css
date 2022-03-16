@@ -215,4 +215,8 @@ main .main .content .buttons-container__right button:last-child {
   text-transform: capitalize;
 }
 
+.red {
+  background: red !important;
+}
+
 /*# sourceMappingURL=styles.css.map */
