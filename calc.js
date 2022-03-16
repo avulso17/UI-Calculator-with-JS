@@ -47,6 +47,10 @@ const getResult = () => {
   if (!firstValue) return null;
   const secondValue = display.textContent;
   secondDisplay.innerHTML = `${firstValue} ${operator} ${secondValue}`;
+  if (operator === "+") display.textContent = +firstValue + +secondValue;
+  if (operator === "-") display.textContent = +firstValue - +secondValue;
+  if (operator === "*") display.textContent = +firstValue * +secondValue;
+  if (operator === "/") display.textContent = +firstValue / +secondValue;
 };
 
 const resetResult = () => {
